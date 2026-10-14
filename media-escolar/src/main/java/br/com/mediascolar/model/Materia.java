@@ -2,22 +2,30 @@ package br.com.mediascolar.model;
 
 import java.util.ArrayList;
 
-public class Materia{
+public class Materia {
 
-    String nome;
-    ArrayList<Double> notas = new ArrayList<>();
-    
-    public String getNome(){
+    private String nome;
+    private ArrayList<Double> notas = new ArrayList<>();
+
+    public String getNome() {
         return nome;
     }
 
-    public ArrayList<Double> getNotas(){
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public ArrayList<Double> getNotas() {
         return notas;
     }
 
-    public double calcularMedia(){
-        
-        if (notas.isEmpty()){
+    public void adicionarNota(double nota) {
+        notas.add(nota);
+    }
+
+    public double calcularMedia() {
+
+        if (notas.isEmpty()) {
             return 0.0;
         }
 
@@ -26,6 +34,7 @@ public class Materia{
         for (double nota : notas) {
             soma += nota;
         }
+
         return soma / notas.size();
     }
 }

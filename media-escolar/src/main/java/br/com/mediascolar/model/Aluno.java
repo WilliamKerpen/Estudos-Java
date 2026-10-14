@@ -5,14 +5,21 @@ import java.util.ArrayList;
 public class Aluno {
 
     private String nome;
-    private ArrayList<Materia> materias = new ArrayList <>();
+    private ArrayList<Materia> materias = new ArrayList<>();
 
-    public Strin getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public ArrayList<Materia> getMaterias(){
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public ArrayList<Materia> getMaterias() {
         return materias;
     }
 
+    public void adicionarMateria(Materia materia) {
+        materias.add(materia);
+    }
 }
